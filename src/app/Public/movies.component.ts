@@ -9,6 +9,7 @@ import { Movie } from '../Shared/Models/Movie';
 })
 export class MoviesComponent implements OnInit {
 
+
   movies!:Movie[];
   constructor(private movieService:MovieService) { }
 

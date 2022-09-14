@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Movie } from 'src/app/Shared/Models/Movie';
+import { MovieDetails } from 'src/app/Shared/Models/Movie-Details';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,8 @@ export class MovieService {
 
   }
 
-  getMovieDetails(id:number){
+  getMovieDetails(id:number):Observable<MovieDetails>{
+    return this.httpClient.get<MovieDetails>("https://localhost:7011/api/Movies/" + id);
 
   }
 
